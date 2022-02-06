@@ -14,9 +14,8 @@ class generate_summary:
       self.tokenizer = AutoTokenizer.from_pretrained(self.model_name, local_files_only=True)
       self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name, local_files_only=True)
     except:
-      print(f'Could not find model named {self.model_name}. Please enter new model name:')
-      self.model_name = input("Enter model name here: ")
-      self.load_model()
+      self.tokenizer = AutoTokenizer.from_pretrained("sshleifer/distilbart-cnn-6-6")
+      self.model = AutoModelForSeq2SeqLM.from_pretrained("sshleifer/distilbart-cnn-6-6")
 
   def tokenize_input(self):
     self.encoded_input = self.tokenizer(self.original_text, truncation=True, return_tensors='pt')
