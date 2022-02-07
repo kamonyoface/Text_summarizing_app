@@ -15,7 +15,9 @@ class MyGridLayout(GridLayout):
     pass
 
 class Grid_LayoutApp(App):
+
     def build(self):
+
 
 
         landing = BoxLayout(orientation='vertical' ,spacing=10, padding=10)
@@ -72,7 +74,9 @@ class Grid_LayoutApp(App):
         landing.button.summarize = Button(text ='Summarize', font_size=40, bold=True, background_color= (56/255, 125/255, 240/255, 1), background_normal='')
         landing.button.summarize.size_hint = (0.4, 1)
         landing.button.summarize.pos_hint = {"center_x":0.5,"center_y":0.5}
+        landing.button.summarize.bind(on_press=self.btn_touch_up)
         landing.button.add_widget(landing.button.summarize)
+
 
         landing.button.lbl = Label(text ='')
         landing.button.lbl.size_hint = (0.1, 1)
@@ -110,8 +114,12 @@ class Grid_LayoutApp(App):
 
 
 
-        return landing
 
+        return landing
+    def btn_touch_up(self,instance):
+        print("summarization started")
+        from subprocess import Popen, PIPE
+        process = Popen(['python3', 'output.py'], stdout=PIPE, stderr=PIPE)
 
 root = Grid_LayoutApp()
 
