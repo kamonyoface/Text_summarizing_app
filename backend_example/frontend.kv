@@ -1,0 +1,39 @@
+<AppLayout>
+
+    text_input: user_input
+    output_window: output_window
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 50    
+
+        Label:
+            text: 'Enter text to be summarized:'
+            font_size: 50
+            height: 50
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            TextInput:
+                id: user_input
+                pos_hint: {'y': .25, 'x':1}
+                multiline:True
+                hint_text: "Paste your text here to summarize it"
+                size_hint: (1, 0.5)
+
+            Button:
+                text: 'Submit'
+                pos_hint: {'y': .25, 'x':1}
+                size_hint: (1, 0.5)
+                background_color: 0,1,1,1
+                on_release: root.submit()
+        
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                id: output_window
+                text: ""
+                text_size: self.width, None
+                size_hint: 1, None
+                pos_hint: {'y': .25, 'x':1}
