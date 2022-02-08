@@ -1,0 +1,336 @@
+<MainScreen>
+    name: 'MainScreen'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (169/255, 169/255, 169/255, 1)
+        background_normal: ''
+        BoxLayout:
+            height: '30dp'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Main page'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.current = 'main'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'About us'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'about'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Saved files'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'saved'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (236/255, 236/255, 236/255, 1)
+        background_normal: ''
+        BoxLayout:
+            height: '40dp'
+            Button:
+                pos_hint: {'top': 0.04}
+                size_hint: (.1, .04)
+                text: ''
+                color: (0,0,0,1)
+                background_color: (236/255, 236/255, 236/255, 1)
+                background_normal: ''
+                background_down: ''
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+        Label:
+            text: "Summarizing text app"
+            font_size: 100
+            bold: True
+            color: 0, 0, 0, 0.5
+            pos_hint:{"center_x":0.2,"center_y":0.5}
+        Label:
+            text: "Provide text"
+            color: 0, 0, 0, 0.5
+            font_size: 70
+            italic: True
+            pos_hint:{"center_x":0.08,"center_y":0.5}
+        TextInput:
+            text: "This is input"
+            font_size: 50
+            width: 100
+            height: 100
+            multiline: False
+            background_color: (236/255, 236/255, 236/255, 1)
+            background_normal: ''
+
+        GridLayout:
+            cols: 3
+            spacing: 10
+            padding: 50
+
+            Button:
+                text: 'Summarize'
+                size_hint: (.4, .4)
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                background_color: (56/255, 125/255, 240/255, 1)
+                background_normal: ''
+                bold: True
+                font_size: 40
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'output'
+            Label:
+                text: ""
+                size_hint: (.1, .4)
+            Button:
+                text: 'Cancel'
+                size_hint: (.4, .4)
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                background_color: (219/255, 74/255, 57/255, 1)
+                background_normal: ''
+                bold: True
+                font_size: 40
+
+
+<OutputScreen>
+    name: 'OutputScreen'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (169/255, 169/255, 169/255, 1)
+        BoxLayout:
+            height: '30dp'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Main page'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'main'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'About us'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'about'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Saved files'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'saved'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (236/255, 236/255, 236/255, 1)
+        background_normal: ''
+        BoxLayout:
+            height: '40dp'
+            Button:
+                pos_hint: {'top': 0.04}
+                size_hint: (.1, .04)
+                text: ''
+                color: (0,0,0,1)
+                background_color: (236/255, 236/255, 236/255, 1)
+                background_normal: ''
+                background_down: ''
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: "Output text"
+            font_size: 70
+            bold: False
+            color: 0,0,0,0.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+
+        GridLayout:
+            cols: 3
+            spacing: 10
+            padding: 50
+            size_hint: (1, .4)
+
+            Button:
+                text: 'Go back'
+                size_hint: (.2, .4)
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                background_color: (56/255, 125/255, 240/255, 1)
+                background_normal: ''
+                bold: True
+                font_size: 40
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'main'
+            Button:
+                text: 'Copy'
+                size_hint: (.2, .4)
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                background_color: (255/255, 206/255, 68/255, 1)
+                background_normal: ''
+                bold: True
+                font_size: 40
+            Button:
+                text: 'Save'
+                size_hint: (.2, .4)
+                pos_hint:{"center_x":0.5,"center_y":0.5}
+                background_color: (26/255, 162/255, 96/255, 1)
+                background_normal: ''
+                bold: True
+                font_size: 40
+
+<AboutScreen>
+
+    name: 'AboutScreen'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (169/255, 169/255, 169/255, 1)
+        BoxLayout:
+            height: '30dp'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Main page'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'main'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'About us'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'about'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Saved files'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'saved'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (236/255, 236/255, 236/255, 1)
+        background_normal: ''
+        BoxLayout:
+            height: '40dp'
+            Button:
+                pos_hint: {'top': 0.04}
+                size_hint: (.1, .04)
+                text: ''
+                color: (0,0,0,1)
+                background_color: (236/255, 236/255, 236/255, 1)
+                background_normal: ''
+                background_down: ''
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: "About text"
+            font_size: 70
+            bold: False
+            color: 0,0,0,0.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            italic: True
+
+
+<SavedScreen>
+
+    name: 'SavedScreen'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (169/255, 169/255, 169/255, 1)
+        BoxLayout:
+            height: '30dp'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Main page'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'main'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'About us'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'about'
+            Button:
+                pos_hint: {'top': 1}
+                size_hint: (.1, .07)
+                text: 'Saved files'
+                background_color: (169/255, 169/255, 169/255, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'saved'
+
+    BoxLayout:
+        orientation: "vertical"
+        background_color: (236/255, 236/255, 236/255, 1)
+        background_normal: ''
+        BoxLayout:
+            height: '40dp'
+            Button:
+                pos_hint: {'top': 0.04}
+                size_hint: (.1, .04)
+                text: ''
+                color: (0,0,0,1)
+                background_color: (236/255, 236/255, 236/255, 1)
+                background_normal: ''
+                background_down: ''
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 20
+
+        Label:
+            text: "Saved texts"
+            font_size: 70
+            bold: False
+            color: 0,0,0,0.5
+            pos_hint:{"center_x":0.5,"center_y":0.5}
+            italic: True
