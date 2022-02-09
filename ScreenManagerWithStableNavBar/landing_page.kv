@@ -259,4 +259,4 @@
                 background_normal: ''
                 bold: True
                 font_size: 40
-                on_press: root.manager.get_screen('FilesScreen').ids.fileslayout.add_widget(Button(text=root.manager.get_screen('MainScreen').ids.title.text, background_color = (26/255, 162/255, 96/255, 1), font_size = 50, height=30))
+                on_press: root.manager.get_screen('FilesScreen').ids.fileslayout.add_widget(Button(text=root.manager.get_screen('MainScreen').ids.title.text, background_color = root.random.choice(root.colors), font_size = 50, height=30))
