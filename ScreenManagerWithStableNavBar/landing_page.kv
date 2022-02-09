@@ -2,10 +2,10 @@
     BoxLayout:
         orientation: "vertical"
         BoxLayout:
-            height: '1dp'
+            size_hint: 1.0, 0.1
+            height: 10
             Button:
                 pos_hint: {'top': 1}
-                size_hint: (.1, .1)
                 text: 'Main Screen'
                 bold: True
                 background_color: (56/255, 125/255, 240/255, 1)
@@ -14,7 +14,6 @@
                     sm.transition.direction = 'right'
             Button:
                 pos_hint: {'top': 1}
-                size_hint: (.1, .1)
                 text: 'About us'
                 bold: True
                 background_color: (56/255, 125/255, 240/255, 1)
@@ -23,7 +22,6 @@
                     sm.transition.direction = 'up'
             Button:
                 pos_hint: {'top': 1}
-                size_hint: (.1, .1)
                 text: 'Files'
                 bold: True
                 background_color: (56/255, 125/255, 240/255, 1)
@@ -108,7 +106,6 @@
         background_color: (236/255, 236/255, 236/255, 1)
         background_normal: ''
         BoxLayout:
-            height: '40dp'
             Button:
                 pos_hint: {'top': 0.04}
                 size_hint: (.1, .04)
@@ -136,6 +133,7 @@
             italic: True
             pos_hint:{"center_x":0.08,"center_y":0.5}
         TextInput:
+            id: textinput
             text: "This is input"
             font_size: 50
             width: 100
@@ -228,6 +226,7 @@
                 background_normal: ''
                 bold: True
                 font_size: 40
+                on_press: root.pc.copy(root.manager.screens[1].ids.textinput.text)
             Button:
                 text: 'Save'
                 size_hint: (.2, .4)
