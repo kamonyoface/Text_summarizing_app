@@ -226,7 +226,7 @@
                 background_normal: ''
                 bold: True
                 font_size: 40
-                on_press: root.pc.copy(root.manager.screens[1].ids.textinput.text)
+                on_press: root.pc.copy(root.manager.get_screen('MainScreen').ids.textinput.text)
             Button:
                 text: 'Save'
                 size_hint: (.2, .4)
