@@ -170,6 +170,7 @@
                     height: 100
                 BoxLayout:
                     orientation: 'horizontal'
+                    
                     ToggleButton:
                         id: toggle-text
                         group: 'input_type'
@@ -179,7 +180,6 @@
                         background_color: {'normal': (1,1,1,1), 'down': (56/255, 125/255, 240/255, 1)} [self.state]
                         on_press:
                             root.toggle('text')
-
 
                     ToggleButton:
                         id: toggle-url
