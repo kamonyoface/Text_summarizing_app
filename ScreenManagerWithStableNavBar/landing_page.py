@@ -5,6 +5,8 @@ from kivy.core.window import Window
 from kivy.core.text import LabelBase
 from kivy.uix.screenmanager import ScreenManager, Screen
 import random
+import pyperclip as pc
+
 
 
 Window.size = (1400, 700)
@@ -13,11 +15,13 @@ class Display(BoxLayout):
     pass
 
 class MainScreen(Screen):
-    pass
+    text_type = 'text'
+
+    def toggle(self, x):
+        self.text_type = x
+        print(f'Chosen text type: {x}')
 
 class OutputScreen(Screen):
-    import pyperclip as pc
-    import random
     red = [1, 0, 0, 1]
     green = [0, 1, 0, 1]
     blue = [0, 0, 1, 1]
