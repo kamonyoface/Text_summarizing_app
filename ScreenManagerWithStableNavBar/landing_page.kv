@@ -153,25 +153,25 @@
             background_color: (236/255, 236/255, 236/255, 1)
             background_normal: ''
             
-            BoxLayout: # Toggle bar is here 
-                orientation: 'vertical'
-                Label:
-                    text: "Choose the type of your input:"
-                    color: 0, 0, 0, 0.5
-                    font_size: 50
-                    width: 100
-                    height: 100
-                BoxLayout:
-                    orientation: 'horizontal'
-                    ToggleButton:
-                        id: toggle-text
-                        group: 'input_type'
-                        text: 'Plain text'
-                        state: 'down'
-                        size_hint: (0.4, 1)
-                        background_color: {'normal': (1,1,1,1), 'down': (56/255, 125/255, 240/255, 1)} [self.state]
-                        on_press:
-                            root.toggle('text')
+        BoxLayout: # Toggle bar is here 
+            orientation: 'vertical'
+            Label:
+                text: "Choose the type of your input:"
+                color: 0, 0, 0, 0.5
+                font_size: 50
+                width: 100
+                height: 100
+            BoxLayout:
+                orientation: 'horizontal'
+                ToggleButton:
+                    id: toggle-text
+                    group: 'input_type'
+                    text: 'Plain text'
+                    state: 'down'
+                    size_hint: (0.4, 1)
+                    background_color: {'normal': (1,1,1,1), 'down': (56/255, 125/255, 240/255, 1)} [self.state]
+                    on_press:
+                        root.toggle('text')
             
         TextInput:
             id: textinput
