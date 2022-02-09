@@ -4,7 +4,10 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.core.window import Window
 from kivy.core.text import LabelBase
 from kivy.uix.screenmanager import ScreenManager, Screen
+
+
 Window.size = (1400, 700)
+
 class Display(BoxLayout):
     pass
 
@@ -12,6 +15,7 @@ class MainScreen(Screen):
     pass
 
 class OutputScreen(Screen):
+    import pyperclip as pc
     pass
 
 class FilesScreen(Screen):
