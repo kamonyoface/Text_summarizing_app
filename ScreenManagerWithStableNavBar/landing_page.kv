@@ -179,6 +179,16 @@
                         background_color: {'normal': (1,1,1,1), 'down': (56/255, 125/255, 240/255, 1)} [self.state]
                         on_press:
                             root.toggle('text')
+
+
+                    ToggleButton:
+                        id: toggle-url
+                        group: 'input_type'
+                        text: 'URL'
+                        size_hint: (0.4, 1)
+                        background_color: {'normal': (1,1,1,1), 'down': (56/255, 125/255, 240/255, 1)} [self.state]
+                        on_press:
+                            root.toggle('URL')
             
         TextInput:
             id: textinput
