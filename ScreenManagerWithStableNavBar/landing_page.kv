@@ -1,3 +1,4 @@
+#: import Button kivy.uix.button.Button
 <Display>
     BoxLayout:
         orientation: "vertical"
@@ -72,6 +73,7 @@
     name: 'FilesScreen'
 
     BoxLayout:
+
         orientation: "vertical"
         background_color: (236/255, 236/255, 236/255, 1)
         background_normal: ''
@@ -88,6 +90,7 @@
 
 
     BoxLayout:
+        id: fileslayout
         orientation: 'vertical'
         padding: 50
         spacing: 20
@@ -126,6 +129,18 @@
             bold: True
             color: 0, 0, 0, 0.5
             pos_hint:{"center_x":0.2,"center_y":0.5}
+        Label:
+            text: "Title: "
+            color: 0, 0, 0, 0.5
+            font_size: 70
+            pos_hint:{"center_x":0.08,"center_y":0.5}
+        TextInput:
+            id: title
+            font_size: 50
+            width: 80
+            height: 50
+            background_color: (236/255, 236/255, 236/255, 1)
+            background_normal: ''
         Label:
             text: "Provide text"
             color: 0, 0, 0, 0.5
@@ -236,3 +251,4 @@
                 background_normal: ''
                 bold: True
                 font_size: 40
+                on_press: root.manager.get_screen('FilesScreen').ids.fileslayout.add_widget(Button(text=root.manager.get_screen('MainScreen').ids.title.text, background_color = (26/255, 162/255, 96/255, 1)))
