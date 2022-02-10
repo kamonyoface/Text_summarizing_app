@@ -27,6 +27,7 @@ class OutputScreen(Screen):
     blue = [0, 0, 1, 1]
     purple = [1, 0, 1, 1]
     colors = [red, green, blue, purple]
+    choice = random.choice(colors)
     pass
 
 class FilesScreen(Screen):
