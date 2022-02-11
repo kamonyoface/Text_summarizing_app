@@ -40,7 +40,7 @@ class MainScreen(Screen):
             # popup window for reminding about choosing the text file
             pass
 
-        if text == 'Count not scrape the website':
+        if text == 'Cound not scrape the website':
             output = text
         else:
             output = summarizing_model.summarize(text) # use previously initialized model to generate summary
