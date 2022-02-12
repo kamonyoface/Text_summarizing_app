@@ -11,7 +11,7 @@ import pyperclip as pc
 from summarizer import *
 from scraper import *
 
-model_path = '../summarizing_model' # specify model path
+model_path = 'summarizing_model' # specify model path
 
 summarizing_model = sum_model(model_path) # initialize summarizer object
 summarizing_model.initialize_model() # initialize model and tokenizer inside the object
